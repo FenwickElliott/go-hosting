@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="description" content=""> -->
+    <meta name="author" content="Charles Fenwick Elliott">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <title>Fenwick Elliott</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/local.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Fenwick Elliott</a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="ElectroBullet.html">ElectroBullet</a>
+              <a class="dropdown-item" href="https://snatched.herokuapp.com">Snatch</a>
+              <a class="dropdown-item" href="GoSnatch.html">GoSnatch</a>
+            </div>
+          </li>
+        </ul>
+        <a class="nav-link p-2" href="mailto:Charles@FenwickElliott.io" aria-label="Mail"><img class="icon" src="assets/icons/mail.png"></a>
+        <a class="nav-link p-2" href="https://github.com/FenwickElliott/" aria-label="GitHub"><img class="icon" src="assets/icons/github.png"></a>
+        <a class="nav-link p-2" href="https://linkedin.com/in/FenwickElliott" aria-label="LinkedIn"><img class="icon" src="assets/icons/linkedin.png"/></a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>GoSnatch</h1>
+        <p class="lead">A simple Go script that consumes the Spotify API to add the currently playing song to a designated playlist.</p>
+        <img class="cover-image" src="assets/icons/Spotify.png">
+        <hr>
+        <h3>Usage:</h3>
+        <p>To install: "go get github.com/fenwickelliott/snatch"</p>
+        <p>To use: "snatch"</p>
+        <h3>How it works:</h3>
+        <p>If this is the first time GoSnatch is run it must initialize itself. To do this it opens a browser to Spotify's OAuth page. If the user grants access their page redirects to a temporary local server which harvest the access code and closes it'self down.</p>
+        <p>The access token is then exchagned for an access token and a refresh token at the Spotify API. These tokens allow GoSnatch to access your Spotify acount and refresh when needed.</p>
+        <p>Once initialized GoSnatch quereys the Spotify API for the now playing track and records it's id. It simultaniously looks for a playlist called 'GoSnatch' and creates one if it can't be found. If the playlist does not already contain the currently playing track it is added with a final REST call.</p>
+        <p>Upon completion a native MacOs notification is sent giving the result.</p>
+        <hr>
+        <!-- <p>Go users can get, build, install and execute GoSnatch using the Go CLI tools, full documentations is available on the <a href="http://GitHub.com/FenwickElliott/GoSnatch">GitHub reop</a>.</p>
+        <p>Users unfamiliar with CLI can download the exectuable script <a href="assets/software/GoSnatch.zip" download>here</a> and double click it to run it. Unfortunately this will open an unsightly terminal window. To avoid that Mac users can download a renamed GoSnatch exectuable and an Automator app <a href="assets/software/GoSnatchMac.zip" download>here</a>. Put the GoSnatchApplication file in your applications folder and the GoSnatch app file anywhere you like (typically the desktop), then double click it or use any other method of opening apps to run GoSnatch.</p> -->
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <script src="js/jquery-slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
